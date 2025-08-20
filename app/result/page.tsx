@@ -32,6 +32,8 @@ import {
   AlertCircle,
   Star,
 } from "lucide-react"
+import Navbar from "@/components/navbar"
+
 
 export default function ResultPage() {
   const [selectedView, setSelectedView] = useState("overview")
@@ -84,6 +86,7 @@ export default function ResultPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <Navbar />
       <div className="bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

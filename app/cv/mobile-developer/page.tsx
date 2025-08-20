@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, User, Briefcase, Code, Calendar, MapPin, Mail, Phone, Award, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import Navbar from "@/components/navbar"
 
 export default function MobileDeveloperCVPage() {
   const profile = {
@@ -84,43 +85,9 @@ export default function MobileDeveloperCVPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">H</span>
-          </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            HireQ
-          </span>
-        </div>
+      <Navbar />
 
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="/cv" className="text-blue-600 font-medium transition-colors">
-            CV
-          </a>
-          <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Interview
-          </a>
-          <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Profile
-          </a>
-          <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Contact
-          </a>
-          <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Result
-          </a>
-        </div>
-
-        <div className="flex items-center space-x-3">
-          <Button variant="ghost" className="text-gray-600 hover:text-gray-900 px-4 py-2">
-            Sign In
-          </Button>
-          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-4 py-2">
-            Get Started
-          </Button>
-        </div>
-      </nav>
+      {/* Main Content */}
 
       <div className="container mx-auto px-6 py-8">
         <Link href="/cv">

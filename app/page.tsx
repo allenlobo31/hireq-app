@@ -9,6 +9,8 @@ import { Upload, FileText, ArrowRight, MapPin, DollarSign, Users, LogOut, User }
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
+import Navbar from "@/components/navbar"
+import { Nav } from "react-day-picker"
 
 export default function HomePage() {
   const [dragActive, setDragActive] = useState(false)
@@ -129,73 +131,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">H</span>
-          </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            HireQ
-          </span>
-        </div>
-
-        {/* Center Links */}
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="/cv" className="text-gray-600 hover:text-gray-900 transition-colors">
-            CV
-          </a>
-          <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Interview
-          </a>
-          <a href="/profile" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Profile
-          </a>
-          <a href="/result" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Result
-          </a>
-        </div>
-
-        {/* Right Buttons */}
-        <div className="flex items-center space-x-3">
-          {loading ? (
-            <div className="animate-pulse flex space-x-3">
-              <div className="h-9 w-20 bg-gray-200 rounded"></div>
-              <div className="h-9 w-24 bg-gray-200 rounded"></div>
-            </div>
-          ) : user ? (
-            <>
-              <div className="flex items-center space-x-3 px-3 py-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                  <User className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-sm font-medium text-gray-700">{user.email}</span>
-              </div>
-              <Button
-                variant="outline"
-                onClick={handleLogout}
-                className="border-2 border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300 px-4 py-2 font-medium transition-all duration-200 bg-transparent"
-              >
-                <LogOut className="w-4 h-4 mr-2" />
-                Sign Out
-              </Button>
-            </>
-          ) : (
-            <>
-              <Link href="/auth/login">
-                <Button variant="ghost" className="text-gray-600 hover:text-gray-900 px-4 py-2">
-                  Sign In
-                </Button>
-              </Link>
-              <Link href="/auth/sign-up">
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-4 py-2">
-                  Get Started
-                </Button>
-              </Link>
-            </>
-          )}
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Main Content */}
       <div className="container mx-auto px-6 py-16">
